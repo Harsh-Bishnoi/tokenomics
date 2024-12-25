@@ -81,10 +81,23 @@ section {
 
 .card {
     height: 154px;
-    border-radius: 10px;
-    border: 1px solid #444444;
-    background: linear-gradient(94.88deg, rgba(255, 255, 255, 0.1) 0.97%, rgba(255, 255, 255, 0) 103.14%);
     padding: 16px 20px;
+    position: relative;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 10px;
+    padding: 2px;
+    background: linear-gradient(94.88deg, rgba(255, 255, 255, 0.1) 0.97%, rgba(255, 255, 255, 0) 103.14%);
+    mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    mask-composite: exclude;
+    backdrop-filter: blur(32px);
+    border-image-source: linear-gradient(95.21deg, rgba(255, 255, 255, 0.2) -0.59%, rgba(255, 255, 255, 0.092) 106.99%);
 }
 
 .card-2 {
@@ -125,27 +138,52 @@ section {
     color: #F06500;
 }
 
-table {
-    margin-top: 150px;
-}
-
-.card-1 {
-    width: 1200px;
-    /* width: 100%; */
-    height: 970px;
-    border-radius: 10px;
-    margin-top: 22px;
-    margin-bottom: 30px;
+.img-parent {
+    position: relative;
     background: linear-gradient(94.88deg, rgba(255, 255, 255, 0.05) 0.97%, rgba(255, 255, 255, 0) 103.14%);
-    border: 2px solid #454444;
-    backdrop-filter: blur(32px)
 }
 
-.circle {
-    width: 270px;
-    height: 270px;
-    margin-top: 70px;
-    margin-left: 60px;
+.p-60 {
+    padding: 60px;
+}
+
+.img-parent::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 10px;
+    padding-right: 2px;
+    padding-top: 2px;
+    padding-left: 2px;
+    background: linear-gradient(94.88deg, rgba(255, 255, 255, 0.1) 0.97%, rgba(255, 255, 255, 0) 103.14%);
+    mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    mask-composite: exclude;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.table-parent {
+    background: linear-gradient(94.88deg, rgba(255, 255, 255, 0.05) 0.97%, rgba(255, 255, 255, 0) 103.14%);
+    position: relative;
+}
+
+.table-parent::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 10px;
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-bottom: 2px;
+    background: linear-gradient(94.88deg, rgba(255, 255, 255, 0.1) 0.97%, rgba(255, 255, 255, 0) 103.14%);
+    mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    mask-composite: exclude;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
 }
 
 .mt-80 {
@@ -186,10 +224,12 @@ table {
     background-color: #FF4560;
 }
 
-.boxes {
-    position: absolute;
-    top: 0%;
-    right: 26%;
+.pl-140 {
+    padding-left: 140px;
+}
+
+.pb-50 {
+    padding-bottom: 50px;
 }
 
 .sed-1 {
@@ -253,6 +293,14 @@ table {
     background-color: #0C0C0C;
 }
 
+.table-1 {
+    border-collapse: collapse;
+}
+
+.position-relative {
+    position: relative;
+}
+
 .seddigq {
     font-family: "Poppins", sans-serif;
     font-size: 18px;
@@ -293,11 +341,6 @@ table {
         padding-right: 12px;
     }
 }
-@media(max-width:576px) {
-    .circle{
-        margin-left: 18px;
-    }
-}
 
 @media(min-width:992px) {
     .col-lg-4 {
@@ -306,41 +349,9 @@ table {
         padding-right: 12px;
     }
 }
-/* 
-@media (max-width:991.98px) {
-    .dog-img {
-        position: absolute;
-        top: 40%;
-        left: 0;
-    }
 
-    .boxes {
-        position: absolute;
-        top: 0%;
-        right: 10%;
+@media (max-width:380px) {
+    .pl-140 {
+        padding-left: 10px;
     }
 }
-
-@media (max-width:768px) {
-    .boxes {
-        position: absolute;
-        top: 32%;
-        left: 10%;
-    }
-
-    .dog-img {
-        position: absolute;
-        top: 80%;
-        left: 0;
-    }
-
-    .dog-img{
-        display: none;
-    }
-}
-
-@media (min-width:1200px) {
-    .card-1{
-        width:1200px
-    }
-} */
