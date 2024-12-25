@@ -83,6 +83,7 @@ section {
     height: 154px;
     padding: 16px 20px;
     position: relative;
+    background: linear-gradient(94.88deg, rgba(255, 255, 255, 0.1) 0.97%, rgba(255, 255, 255, 0) 103.14%);
 }
 
 .card::before {
